@@ -1,6 +1,6 @@
-```python
 """
 AI Narrative Layer
+
 Turns the structured gate results + decision into the human-readable
 reasoning shown on the "AI Procurement Decision" screen.
 
@@ -17,7 +17,11 @@ import os
 GROQ_MODEL = "openai/gpt-oss-120b"
 
 
-def _fallback_narrative(action: str, reasons: list, estimated_savings: float) -> str:
+def _fallback_narrative(
+    action: str,
+    reasons: list,
+    estimated_savings: float
+) -> str:
     lines = [f"Recommended Action: {action}", ""]
 
     lines.append("Reasoning:")
@@ -26,7 +30,9 @@ def _fallback_narrative(action: str, reasons: list, estimated_savings: float) ->
 
     if estimated_savings and estimated_savings > 0:
         lines.append("")
-        lines.append(f"Estimated Savings: ${estimated_savings:,.2f}")
+        lines.append(
+            f"Estimated Savings: ${estimated_savings:,.2f}"
+        )
 
     return "\n".join(lines)
 
@@ -47,7 +53,7 @@ def generate_reasoning(
 
     api_key = os.environ.get("GROQ_API_KEY", "").strip()
 
-    # No API key → use reliable rule-based fallback
+    # No API key -> use reliable rule-based fallback
     if not api_key:
         return _fallback_narrative(
             action,
@@ -109,4 +115,3 @@ def generate_reasoning(
             reasons,
             estimated_savings
         )
-```
