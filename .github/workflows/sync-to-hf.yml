@@ -20,4 +20,4 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push https://fawadalishan:${HF_TOKEN}@huggingface.co/spaces/fawadalishan/AutoProcure-AI main
+          git push --force https://fawadalishan:${HF_TOKEN}@huggingface.co/spaces/fawadalishan/AutoProcure-AI main
