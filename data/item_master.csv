@@ -1,0 +1,13 @@
+sku,description,category,unit_price,gl_code,aliases
+HS-9912,"Helmet, Protective Industrial",Safety,25.00,5510,"safety helmet;hard hat;protective helmet;industrial helmet;hardhat"
+LC-2201,"Laptop Charger 65W",IT Equipment,25.00,6010,"laptop power adapter;laptop charger;notebook charger;power brick;charger cable"
+LT-3305,"Laptop, Business Class 14in",IT Equipment,850.00,6010,"laptop;notebook computer;business laptop"
+OC-4110,"Office Chair, Ergonomic",Furniture,180.00,6210,"office chair;ergonomic chair;desk chair"
+PT-5020,"Printer Toner Cartridge, Black",Office Supplies,45.00,6310,"toner cartridge;printer toner;ink cartridge black"
+IG-6015,"Glove, Industrial Cut-Resistant",Safety,8.50,5510,"safety gloves;cut resistant gloves;work gloves;industrial gloves"
+SF-6231,"Safety Vest, High Visibility",Safety,12.00,5510,"hi vis vest;safety vest;reflective vest;high visibility vest"
+MB-7040,"Mouse, Wireless Optical",IT Equipment,15.00,6010,"wireless mouse;computer mouse;optical mouse"
+KB-7041,"Keyboard, Wireless",IT Equipment,20.00,6010,"wireless keyboard;computer keyboard"
+WD-8110,"Welding Rod, 5kg Box",Maintenance,60.00,6410,"welding rods;weld rod box"
+FB-8220,"Filter, Industrial Air Bag",Maintenance,35.00,6410,"air filter;industrial filter bag;bag filter"
+DS-9001,"Desk, Standard Office",Furniture,220.00,6210,"office desk;work desk;standard desk"

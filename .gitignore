@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+data/purchase_requests_log.csv
+data/purchase_requests_log.csv.lock
+.DS_Store
+*.egg-info/
+flagged/
+gradio_cached_examples/
