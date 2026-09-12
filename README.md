@@ -111,17 +111,39 @@ autoprocure-ai/
 
 ## Deploying to Hugging Face Spaces
 
-1. Create a new Space at https://huggingface.co/new-space, SDK = **Gradio**.
-2. Push this repo's contents to the Space's git remote (see below) — the
-   `title`/`sdk`/`app_file` metadata at the top of this README is what Spaces reads
-   to configure the build, so keep it in place.
-3. If you want real Groq LLM reasoning in production, add `GROQ_API_KEY` as a
-   **Space secret** (Settings → Variables and secrets) rather than committing it.
+> **Note:** Hugging Face now requires a **PRO plan** to create Gradio or Docker Spaces
+> (Static Spaces are the only free option, and can't run this Python backend as-is).
+> If you have or get HF PRO, deployment is:
+
+1. Go to https://huggingface.co/new-space
+2. Name it, pick **Gradio** as the SDK, choose the free **CPU basic** hardware tier
+3. Push this repo's contents to the Space's git remote — the `title`/`sdk`/`app_file`
+   metadata at the top of this README is what Spaces reads to configure the build
+4. If you want real Groq LLM reasoning in production, add `GROQ_API_KEY` as a
+   **Space secret** (Settings → Variables and secrets) rather than committing it
 
 ```bash
 git remote add space https://huggingface.co/spaces/<your-username>/autoprocure-ai
 git push space main
 ```
+
+## Deploying to Render.com (free tier, no paid plan needed)
+
+This repo ships with `render.yaml` and a `Procfile` so it deploys with almost no setup:
+
+1. Go to https://dashboard.render.com/ and sign in (GitHub login works)
+2. Click **New +** → **Blueprint**, then connect this GitHub repo
+   (`https://github.com/FawadAliShan010/Autoprocure-ai`)
+3. Render reads `render.yaml` automatically and proposes a free **Web Service**
+   named `autoprocure-ai` — click **Apply**/**Create**
+4. (Optional) In the service's **Environment** tab, add `GROQ_API_KEY` if you want
+   real LLM-generated reasoning; otherwise the rule-based fallback is used automatically
+5. Wait for the build to finish (a few minutes) — Render gives you a live URL like
+   `https://autoprocure-ai.onrender.com`
+
+Note: Render's free web services spin down after ~15 minutes of inactivity and take
+~30-60 seconds to wake back up on the next request — fine for a hackathon demo, just
+give it a moment on the first load.
 
 ## Notes on data & scope
 
