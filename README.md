@@ -145,6 +145,25 @@ Note: Render's free web services spin down after ~15 minutes of inactivity and t
 ~30-60 seconds to wake back up on the next request — fine for a hackathon demo, just
 give it a moment on the first load.
 
+## Deploying to Vercel
+
+This repo also ships with `vercel.json` and `api/index.py`, which mount the Gradio
+app inside a FastAPI wrapper for Vercel's serverless Python runtime:
+
+1. Go to https://vercel.com/new and import this GitHub repo
+2. Vercel auto-detects `vercel.json` — no extra config needed
+3. Add `GROQ_API_KEY` as an environment variable in the Vercel project settings if
+   you want real LLM-generated reasoning
+4. Deploy — Vercel gives you a live URL immediately
+
+## Auto-sync to Hugging Face
+
+`.github/workflows/sync-to-hf.yml` automatically force-pushes `main` to a Hugging
+Face Space (`spaces/fawadalishan/AutoProcure-AI`) on every push, using an `HF_TOKEN`
+repository secret. Configure that secret under **Settings → Secrets and variables →
+Actions** in this GitHub repo if you want that sync to run (requires the target
+Space to already exist and requires HF PRO for a Gradio-SDK Space).
+
 ## Notes on data & scope
 
 This first working version, per the product requirements:
