@@ -55,15 +55,17 @@ so the **Dashboard / History** tab shows real, cumulative stats.
 
 ## Screens
 
-| # | Screen |
-|---|--------|
-| 1 | Sign in |
-| 2 | Submit Purchase Request |
-| 3 | Processing / Data Collection |
-| 4 | Data Checks & Analysis (Gates 1–4) |
-| 5 | AI Procurement Decision |
-| 6 | Final Recommendation / Result |
-| 7 | Dashboard / History |
+| # | Screen | What's real |
+|---|--------|-------------|
+| 1 | Sign in | Demo auth (any credentials accepted) — sets the session identity used everywhere else |
+| 2 | Home | Live stat cards + recent requests pulled from the actual request log |
+| 3 | Submit Purchase Request | Full Gates 1-4 pipeline, AI decision, and **working finalize buttons** (Approve/Hold/Investigate/Expedite/Save) that update the request's real status |
+| 4 | My Requests | Scoped to the signed-in employee by default (toggle "admin view" to see all), with real search + department + status filtering |
+| 5 | Analytics | Live charts (requests by AI recommendation, savings by department, requests over time) computed from the request log |
+| 6 | Settings | Read-only reference data (department budgets, item master) + live AI-provider status + a real "Reset Demo Data" action |
+
+No screen displays a hardcoded success message or fake data — every action reads from or writes to
+`data/purchase_requests_log.csv` through `core/storage.py`.
 
 ## Running locally
 
